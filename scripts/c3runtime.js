@@ -2953,6 +2953,7 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Plugins.Sprite.Acts.SetOpacity,
 		C3.Plugins.Sprite.Acts.SetEffectEnabled,
@@ -2965,6 +2966,7 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Plugins.System.Cnds.ForEach,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
 		C3.Plugins.Sprite.Cnds.PickDistance,
 		C3.Plugins.Sprite.Exps.X,
 		C3.Plugins.Sprite.Exps.Y,
@@ -2973,11 +2975,9 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Cnds.TriggerOnce,
-		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
-		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
 		C3.Plugins.Sprite.Acts.MoveToTop,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
@@ -3036,11 +3036,14 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		{InstructionText3: 0},
 		{waterJarSelector: 0},
 		{demopHStrip: 0},
+		{Pipette: 0},
+		{pipetteCollider: 0},
 		{Droppers: 0},
 		{Bottles: 0},
 		{Drops: 0},
 		{ElapsedTime: 0},
-		{mode: 0}
+		{mode: 0},
+		{waterFilled: 0}
 	];
 }
 
@@ -3159,16 +3162,18 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => (638 + f0((-15), 15));
+			return () => (658 + f0((-5), 5));
 		},
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0((-5), 5);
 		},
+		() => "filled",
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
 		},
+		() => "empty",
 		() => "Vinegar Bottle Drops",
 		() => "closed",
 		() => "open",
@@ -3199,8 +3204,14 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		() => "wait",
 		() => "fade out",
 		() => "Uncapped",
-		() => "experiment",
-		() => 0.5
+		() => "tutorial",
+		() => "12",
+		() => "pipette",
+		() => "filling",
+		() => "emptying",
+		() => 0.1,
+		() => 12,
+		() => "experiment"
 	];
 }
 
