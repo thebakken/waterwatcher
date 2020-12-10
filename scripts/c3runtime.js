@@ -2974,6 +2974,7 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Cnds.TriggerOnce,
+		C3.Plugins.Sprite.Cnds.CompareOpacity,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Plugins.Sprite.Acts.SetInstanceVar,
 		C3.Plugins.System.Cnds.Else,
@@ -3176,6 +3177,7 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		() => "empty",
 		() => "filling",
 		() => "Vinegar Bottle Drops",
+		() => 100,
 		() => "closed",
 		() => "open",
 		p => {
@@ -3199,7 +3201,6 @@ d},Unpin(){this._SetPinInst(null);this._mode="";this._propSet.clear();this._pinI
 		() => 5,
 		() => "Capped",
 		() => "fade in",
-		() => 100,
 		() => "tap",
 		() => "wait",
 		() => "fade out",
